@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 05:40:07 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/04/24 10:25:49 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:45:34 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	open_herdoc(char *delimter, int helper_fd, int *n)
 	char 	*line;
 	char	**exp;
 	char	*new_line;
-
+	
 	helper_fd = open("/tmp/random_name", O_RDWR | O_CREAT, 0777);
 	fd = open ("/tmp/random_name", O_RDONLY | O_CREAT, 0777);
 	if (unlink("/tmp/random_name") || (helper_fd < 0) || (fd < 0))
@@ -62,4 +62,6 @@ void ft_herdoc(t_token **tokens)
 		current = current->next;
 	}
 }
+
+
 

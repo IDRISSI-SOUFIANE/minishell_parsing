@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 09:29:27 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/04/24 09:32:44 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:41:49 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,23 @@ int	ft_null(char *s)
 	return (0);
 }
 
+int	check_herdoc(t_keyword type, char *delimter)
+{
+	int	i;
+
+	i = 0;
+	if (type == F_HERDOC)
+	{
+		while (delimter[i])
+		{
+			if (delimter[i] == '$')
+				return (0);
+			i++;
+		}
+	}
+	return (1);
+}
+
 void ft_expand(t_token *tokens, int i)
 {
 	char **expanded;
@@ -103,7 +120,7 @@ void ft_expand(t_token *tokens, int i)
 
 	while (tokens)
 	{
-		if (tokens->type != F_HERDOC && tokens->value
+		if (check_herdoc(tokens->type, tokens->value[0]) && tokens->value
 			&& tokens->value[0] && !ft_null(tokens->value[0]))
 		{
 			flag = 0;

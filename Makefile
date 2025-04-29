@@ -1,6 +1,6 @@
 CC = cc
-# FLAGS = -Wall -Wextra -Werror -fsanitize=address
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fsanitize=address
+# FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRC = parsing/main.c parsing/tokenization.c parsing/tokenization_helper.c parsing/grabage.c parsing/error.c\

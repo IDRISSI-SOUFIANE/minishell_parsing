@@ -6,7 +6,7 @@
 /*   By: sidrissi <sidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 11:15:46 by sidrissi          #+#    #+#             */
-/*   Updated: 2025/04/24 12:39:22 by sidrissi         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:50:36 by sidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ void	helper_main(t_token *tokens, int *flag)
 
 int main(int ac, char **av, char **env)
 {
-	atexit(f);
+	// atexit(f);
 	((void)ac, (void)av);
 	(void)env; // I am voiding env cause in expand i am using function getenv() !!!!! and should check if env is not NULL also should work with env of execution
 
